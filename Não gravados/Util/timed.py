@@ -11,3 +11,6 @@ def get_time(func):
         return result
     return wrapper
 
+#Uso
+@get_time
+Function()
