@@ -1,6 +1,5 @@
 #coding: utf-8
 import time
-import logging
 
 def get_time(func):
     def wrapper(*args, **kwargs):
@@ -11,3 +10,6 @@ def get_time(func):
         return result
     return wrapper
 
+#Uso
+@get_time
+Function()
