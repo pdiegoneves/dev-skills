@@ -8,13 +8,13 @@ def test1():
         dobros.append(num * 2)
 
 
-    # print(dobros)
+    print(dobros)
 
 @get_time
 def test2():
     dobros2 = [num * 2 for num in nums]
 
-    # print(dobros2)
+    print(dobros2)
 
 
 # test1()
