@@ -4,6 +4,11 @@ a = [1, 2, 3]
 
 b = a
 
+c = list(a)
+
+print(a is b)
+print(a is c)
+
 b.append(4)
 
 print("a", a)
@@ -18,6 +23,8 @@ class Classe():
         
 x = Classe()
 y = Classe()
+
+
 
 pessoa1 = {"Nome": "Joao Silva", "Nascimento" : 2000}
 
@@ -114,9 +121,53 @@ print("ID Alunos Sala1", id(sala1.alunos))
 print("ID Alunos Sala2", id(sala2.alunos))
 print("ID Alunos Sala3", id(sala3.alunos))
 
+sala2.alunos.remove("Pedro")
+sala3.alunos.append("Jonas")
 
-# print("IDS Salas", id(sala1), id(sala2), id(sala3))
-# sala1.alunos.append('Felipe')
-# print(sala2.alunos)
-# print("IDS Alunos", id(sala1.alunos), id(sala2.alunos), id(sala3.alunos))
-# sala3.alunos
+print("sala1", id(sala1), sala1)
+print("sala2", id(sala2), sala2)
+print("sala3", id(sala3), sala3)
+
+
+print("=================")
+"A função pode alterar qualquer objeto mutável passado para ela"
+def f(a, b):
+    a += b
+    return a
+
+# x = 1
+# y = 2
+
+# x = [1, 2]
+# y = [3, 4]
+
+x = (1, 2)
+y = (3, 4)
+
+
+print(f(x, y))
+print(x, y)
+
+print("Perigo")
+
+time_da_escola = ["Atleta 1", "Atleta 2", "Atleta 3", "Atleta 4", "Atleta 5"]
+    
+class Onibus:
+    def __init__(self, passageiros=None):
+        # self.passageiros = passageiros or []
+        self.passageiros = list(passageiros) or []
+    
+    def embarcar(self, nome):
+        self.passageiros.append(nome)
+
+    def desembarcar(self, nome):
+        self.passageiros.remove(nome)
+
+    
+        
+onibus = Onibus(time_da_escola)
+
+onibus.desembarcar("Atleta 3")
+
+print(onibus.passageiros)
+print(time_da_escola)
