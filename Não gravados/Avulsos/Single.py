@@ -7,8 +7,8 @@ class Pessoa:
         self.nascimento:date = date.fromisoformat(nascimento)
 
     def apresentar(self):
-        return f"Olá, meu nome é {self.nome}"
-        # return f"Olá, meu nome é {self.nome} e eu tenho {self.calcular_idade()} anos."
+        # return f"Olá, meu nome é {self.nome}"
+        return f"Olá, meu nome é {self.nome} e eu tenho {calcular_idade(self)} anos."
 
 #     def calcular_idade(self):
 #         hoje = date.today()
