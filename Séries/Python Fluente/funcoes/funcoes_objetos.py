@@ -1,65 +1,57 @@
 # Funções em python são objetos de primeira classe
 """
 Criada durante a execução de um programa
-
 Atribuída a uma variável ou a um elemento em uma estrutura de dados
-
 Passada como argumento para uma função
-
 Devolvida como o resultado de uma função
 """
 
 def ola_mundo():
-    return "Olá Mundo!"
-
-print(type(ola_mundo))
+    return "Óla mundo"
 
 print(ola_mundo())
+print(type(ola_mundo()))
+print(ola_mundo)
+print(type(ola_mundo))
 
-
-# Funções de ordem superior
-# Uma função que recebe uma função como argumento ou devolve uma função como resultado é uma função de ordem superior
+print("Funções de Ordem Superior")
 
 def dobro(n):
     return n * 2
 
-lista = list(map(dobro, [1, 2, 3, 4, 5]))
+print(dobro(2))
 
-print(lista)
+lista_numeros = [1, 2, 3, 4, 5]
 
-# Funções anônimas
+lista_dobro = list(map(dobro, lista_numeros))
 
-fruits = ["Banana", "maça", "manga"]
+print(lista_dobro)
 
-print(sorted(fruits, key=lambda x: len(x)))
+print("Classe como função")
 
-
-# É possível fazer uma classe ser invocável
 class Pessoa:
-    def __init__(self, nome, idade):
+    def __init__(self, nome):
         self.nome = nome
-        self.idade = idade
-        
-    def __call__(self, *args, **kwds):
-        print(f"Eu sou {self.nome} e tenho {self.idade} anos")
+
+    def __call__(self):
+        print(f"Meu nome é {self.nome}")
     
-    
-p = Pessoa("Diego", 39)
+
+p = Pessoa("João")
 
 p()
 
-# Paramentros apenas posicionais
+print("Paramentros apenas posicionais")
 
 def soma(a, b):
     return a + b
 
 print(soma(1, 2))
-# print(soma(a=1, 2))
-print(soma(a=1, b=2))
-print(soma(1, b=2))
+print(soma(2, b=2))
+print(soma(b=3, a=2))
+# print(soma(b=1, 2))# Gera erro
 
-def multi(a, b, /):
+def mult(a, b, /):
     return a * b
 
-print(multi(2, 3))
-# print(multi(a=1, b=2))
+print(mult(5, 2))
